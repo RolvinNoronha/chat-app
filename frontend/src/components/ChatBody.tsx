@@ -7,7 +7,7 @@ type ChatBodyPropType = {
 
 const ChatBody: React.FC<ChatBodyPropType> = ({ messages }) => {
   return (
-    <div className="w-[60%] h-[70%] bg-slate-200 px-8 py-4 rounded-xl">
+    <div className="w-[60%] h-[70%] bg-slate-200 px-8 py-4 rounded-xl overflow-scroll">
       {messages.map((message, idx) => {
         if (message.type === "recieve") {
           return (

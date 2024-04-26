@@ -48,7 +48,6 @@ const Rooms = () => {
   };
 
   const createNewRoom = async () => {
-    axios({});
     try {
       const postData = JSON.stringify({
         id: uuidv4(),
@@ -85,6 +84,7 @@ const Rooms = () => {
   };
 
   const logout = async () => {
+    localStorage.removeItem("user");
     const response = await axios({
       method: "get",
       url: `${process.env.REACT_APP_API_URL}/logout`,
@@ -109,7 +109,7 @@ const Rooms = () => {
           value={newRoom}
           onChange={(e) => setNewRoom(e.target.value)}
           type="text"
-          placeholder="room name"
+          placeholder="Enter room name here"
         />
         <button
           className="bg-blue-600 px-5 py-2 text-white mr-4 rounded-xl"
